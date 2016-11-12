@@ -21,4 +21,6 @@ typedef struct { //estructura del buffer circular
 void create_c_buffer(M_C_BUFFER * a);
 int16_t status_c_buffer(M_C_BUFFER * a);
 void push_c_buffer(M_C_BUFFER * a,uint8_t caracter);
-#endif
+uint8_t pull_c_buffer(M_C_BUFFER * a);
+void destroy_c_buffer(M_C_BUFFER * a);
+#endif// end of BUFFE_H
