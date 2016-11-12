@@ -44,7 +44,31 @@ void push_c_buffer(M_C_BUFFER * a,uint8_t caracter) //ingresa un caracter haste 
 	}
 
 
+uint8_t pull_c_buffer(M_C_BUFFER * a)//vacia el buffer circular, si estuviese vacio devuelve 0,
+{
+	uint8_t caracter=BUFFER_FALSE;
+	
+	if (((*a).counter)!=BUFFER_FALSE)//evaluo si no esta vacio el buffer
+	{
 
+		if(((*a).counter)==BUFFER_ERROR)//si hubo overflow del buffer entonces seteo el contador 
+		{								//con el tamaño de elementos del buffer(size)
+			((*a).counter)=((*a).size);
+		}
+
+		caracter=((*a).buff)[((*a).pull)];
+		((*a).counter)--;
+		((*a).pull)++;//aumento el contador que lee
+		if(((*a).pull)>(((*a).size)-1))//evaluo si llegue al final del arreglo lineal
+		{
+			((*a).push)=BUFFER_FALSE;//reinicio pull
+		}
+
+
+	}
+
+	return carcater;
+}
 
 
 
