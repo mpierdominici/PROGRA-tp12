@@ -1,8 +1,8 @@
 #include "nonblock.h"
 #include <stdlib.h>
-#include <stdint.h>
+
 #include "teclado.h"
-#include "buffer.h"
+
 #ifdef _WIN32
    #error "This program is only targeted at Linux systems"
 #endif
@@ -14,7 +14,7 @@
 static uint8_t un_carcater=FALSE;
 static M_C_BUFFER * teclado_eventos=NULL;
 static uint8_t stop =TRUE;
-void start_teclado(void)
+void * start_teclado(void * a)
 {
 
 int result =ERROR;		
@@ -40,6 +40,7 @@ stop =TRUE;
 
 		else if((kbhit()==FALSE)&&(un_carcater==TRUE))
 		{
+			//printf("%c\n",caracter );
 			push_c_buffer(teclado_eventos,caracter);
 			un_carcater=FALSE;
 		}

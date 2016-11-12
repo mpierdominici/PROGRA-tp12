@@ -7,9 +7,9 @@
 #define BUFFER_ERROR -1
 #define DEFAULT_SIZE 10 //en caso que no se defina el size, por defecto sera 10
 
-void setsize_c_buffer(M_C_BUFFER * a,uint8_t tamaño)
+void setsize_c_buffer(M_C_BUFFER * a,uint8_t tamanio)
 {
-	(*a).size=tamaño;
+	(*a).size=tamanio;
 }
 
 void create_c_buffer(M_C_BUFFER * a)//esta funcion creara el buffer en el heap, y modificara la estructura,
@@ -39,6 +39,7 @@ void push_c_buffer(M_C_BUFFER * a,uint8_t caracter) //ingresa un caracter haste 
 			else
 			{	
 				((*a).buff)[((*a).push)]=caracter;
+				//printf("%c\n",((*a).buff)[((*a).push)]);
 				((*a).counter)++;
 				((*a).push)++;//aumento el contador que agrega
 				if(((*a).push)>(((*a).size)-1))//evaluo si llegue al final del arreglo lineal
@@ -64,11 +65,12 @@ uint8_t pull_c_buffer(M_C_BUFFER * a)//vacia el buffer circular, si estuviese va
 		}
 
 		caracter=((*a).buff)[((*a).pull)];
+		//printf("%c\n",caracter);
 		((*a).counter)--;
 		((*a).pull)++;//aumento el contador que lee
 		if(((*a).pull)>(((*a).size)-1))//evaluo si llegue al final del arreglo lineal
 		{
-			((*a).push)=BUFFER_FALSE;//reinicio pull
+			((*a).pull)=BUFFER_FALSE;//reinicio pull
 		}
 
 

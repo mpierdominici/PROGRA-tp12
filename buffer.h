@@ -2,8 +2,7 @@
 #define BUFFER_H
 #include <stdint.h>
 
-
-
+#include <stdio.h>
 
 
 typedef struct { //estructura del buffer circular
@@ -23,5 +22,5 @@ int16_t status_c_buffer(M_C_BUFFER * a);
 void push_c_buffer(M_C_BUFFER * a,uint8_t caracter);
 uint8_t pull_c_buffer(M_C_BUFFER * a);
 void destroy_c_buffer(M_C_BUFFER * a);
-void setsize_c_buffer(M_C_BUFFER * a,uint8_t tamaño);
+void setsize_c_buffer(M_C_BUFFER * a,uint8_t tamanio);
 #endif// end of BUFFE_H

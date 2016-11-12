@@ -68,7 +68,7 @@ uint8_t pull_c_buffer(M_C_BUFFER * a)//vacia el buffer circular, si estuviese va
 		((*a).pull)++;//aumento el contador que lee
 		if(((*a).pull)>(((*a).size)-1))//evaluo si llegue al final del arreglo lineal
 		{
-			((*a).push)=BUFFER_FALSE;//reinicio pull
+			((*a).pull)=BUFFER_FALSE;//reinicio pull
 		}
 
 
