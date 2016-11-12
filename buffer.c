@@ -70,6 +70,11 @@ uint8_t pull_c_buffer(M_C_BUFFER * a)//vacia el buffer circular, si estuviese va
 	return carcater;
 }
 
+void destroy_c_buffer(M_C_BUFFER * a)//vacia el espacio de mamoria reservado para el buffer
+{
+	free((void)*((*a).buff));
+}
+
 
 
 
