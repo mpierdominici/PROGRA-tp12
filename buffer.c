@@ -10,9 +10,9 @@
 void create_c_buffer(M_C_BUFFER * a)//esta funcion creara el buffer en el heap, y modificara la estructura,
 	{									//almacenando en el puntero correspondiente donde comienza el buffer.
 		(*a).buff=(uint8_t *) calloc((*a).size,sizeof(uint8_t));
-		((*a).counter)=FALSE;
-		((*a).push)=FALSE;
-		((*a).pull)=FALSE;
+		((*a).counter)=BUFFER_FALSE;
+		((*a).push)=BUFFER_FALSE;
+		((*a).pull)=BUFFER_FALSE;
 
 	}
 
@@ -36,7 +36,7 @@ void push_c_buffer(M_C_BUFFER * a,uint8_t caracter) //ingresa un caracter haste 
 				((*a).push)++;//aumento el contador que agrega
 				if(((*a).push)>(((*a).size)-1))//evaluo si llegue al final del arreglo lineal
 				{
-					((*a).push)=FALSE;//reinicio push
+					((*a).push)=BUFFER_FALSE;//reinicio push
 				}
 
 			}
