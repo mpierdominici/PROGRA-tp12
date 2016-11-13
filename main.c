@@ -28,6 +28,7 @@ int main (void)
 	uint8_t exit=1;
 	M_C_BUFFER eventos_teclado;//creo el buffer circular
 	setsize_c_buffer(&eventos_teclado,TAMANIO_BUFFER);//seteo el tamaño del teclado
+	create_c_buffer(&eventos_teclado);
 	set_buffer_teclado(&eventos_teclado);//inidico que se guarden los eventos del teclado en el buffer indicado
 	pthread_create(&t1,NULL,start_teclado,NULL);//inicializo el teclado
 
