@@ -1,3 +1,17 @@
+/************************************************************/
+/*  Trabajo Practico N°12                                   */
+/*                                                          */
+/*                                                          */
+/*Integrantes del grupo:                                    */
+/*Maspero Martina(57120),Pierdominici Matias(57498),        */
+/*Ayouba Gael(58622)                                        */
+/* mpierdominici@itba.edu.ar                                */
+/************************************************************/
+
+//repository:  https://github.com/mpierdominici/PROGRA-tp12.git
+
+/*manejo de teclado que guarda eventos en buffer circular*/
+
 #include "nonblock.h"
 #include <stdlib.h>
 

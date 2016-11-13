@@ -1,3 +1,17 @@
+/************************************************************/
+/*  Trabajo Practico N°12                                   */
+/*                                                          */
+/*                                                          */
+/*Integrantes del grupo:                                    */
+/*Maspero Martina(57120),Pierdominici Matias(57498),        */
+/*Ayouba Gael(58622)                                        */
+/* mpierdominici@itba.edu.ar                                */
+/************************************************************/
+
+//repository: https://github.com/mpierdominici/PROGRA-tp12.git
+
+/*implementacion de buffer circular, cuando este se llena deja de almacenar informacion
+pero avisa esto mediante status_c_buffer*/
 #include "buffer.h"
 #include <stdio.h>
 #include <stdlib.h>
